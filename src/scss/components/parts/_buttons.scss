@@ -1,0 +1,124 @@
+// パーツ・ボタン
+
+
+
+// 変数、ミックスイン、関数
+@use "../../global" as g;
+
+
+
+// プライマリ
+.primaryBtn {
+  appearance: none;
+  max-width: 400px;
+  height: 70px;
+  border: solid 1px;
+  border-radius: 6px;
+  background-color: g.$whiteColor;
+  color: g.$mainColor;
+  @include g.rem-fz(20);
+  font-weight: bold;
+  line-height: 1;
+  text-decoration-line: none;
+  outline: none;
+  cursor: pointer;
+  transition: all .3s;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 0.2em;
+  justify-content: center;
+  align-items: center;
+
+  @include g.hover-focus {
+    border-color: g.$baseColor2;
+    background-color: g.$baseColor1;
+    color: g.$mainColor;
+  }
+
+  &.--sm {
+    height: 46px;
+    @include g.rem-fz(14);
+  }
+
+  &.--leftArrow {
+
+    &::before {
+      content: "";
+      width: calc(8 / 14 * 1em);
+      height: calc(8 / 14 * 1em);
+      border-left: solid 2px;
+      border-bottom: solid 2px;
+      rotate: 45deg;
+    }
+  }
+
+  &.--rightArrow {
+
+    &::after {
+       content: "";
+       width: calc(8 / 14 * 1em);
+       height: calc(8 / 14 * 1em);
+       border-top: solid 2px;
+       border-right: solid 2px;
+       rotate: 45deg;
+    }
+  }
+
+  &.--bgc {
+    background-color: g.$baseColor2;
+    color: g.$whiteColor
+  }
+
+  &.--cart {
+    max-width: 184px;
+    height: auto;
+    padding: 10px;
+    border-color: transparent;
+    background-color: g.$baseColor2;
+    color: g.$whiteColor;
+    @include g.rem-fz(14);
+    column-gap: 5px;
+
+    &::before {
+      content: url(../images/common/ico_cart.svg);
+    }
+
+    @include g.hover-focus {
+      border-color: transparent;
+      background-color: g.$baseColor2;
+      color: g.$whiteColor;
+      opacity: 0.7;
+    }
+  }
+
+  &.--pc-center {
+
+    @include g.mq {
+      margin-inline: auto;
+    }
+  }
+}
+
+
+
+
+// ページの先頭に戻る
+.pageTopBtn {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: g.$mainColor;
+  transition: background-color .3s;
+
+  &:hover,
+  &:focus-visible {
+    background-color: g.$baseColor2;
+  }
+
+
+  @include g.mq {
+    width: 80px;
+    height: 80px;
+  }
+}

@@ -1,0 +1,91 @@
+// フォーム・お問い合わせ
+
+
+// 変数、ミックスイン、関数
+@use "../../../global" as g;
+
+
+.contactForm {
+  border-top: dashed 1px g.$baseColor2;
+
+  &__item {
+    border-bottom: dashed 1px g.$baseColor2;
+    padding-block: 30px;
+  }
+
+  &__label {
+    @include g.rem-fz(18);
+    font-weight: bold;
+  }
+
+  &__tag {
+    margin-left: 30px;
+  }
+
+  &__selectWrapper {
+    position: relative;
+    margin-top: 20px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 20px;
+      width: 10px;
+      height: 10px;
+      border-right: solid 2px;
+      border-bottom: solid 2px;
+      margin-block: auto;
+      rotate: 45deg;
+
+      .is-error & {
+        border-color: g.$accentColor;
+      }
+    }
+  }
+
+  &__select {
+    appearance: none;
+    border: solid 1px g.$grayColor1;
+    border-radius: 4px;
+    padding: 10px 20px;
+    width: 100%;
+    background-color: g.$whiteColor;
+    font-family: inherit;
+    outline: none;
+
+    &:focus {
+      box-shadow: 0 0 5px rgba(168, 142, 37, 0.7);
+    }
+
+    .is-error & {
+      color: g.$accentColor;
+      border-color: g.$accentColor;
+    }
+  }
+
+  &__error {
+    display: none;
+    margin-top: 16px;
+    color: g.$accentColor;
+    @include g.rem-fz(16);
+    font-weight: bold;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1.25em;
+      height: 1.25em;
+      margin-right: .2em;
+      background-image: url(../images/common/ico_attention.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      vertical-align: middle;
+    }
+
+    .is-error & {
+      display: block;
+    }
+  }
+}

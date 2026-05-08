@@ -1,0 +1,86 @@
+// メディア・ブログ
+
+
+// 変数、ミックスイン、関数
+@use "../../../global";
+
+
+
+.blogMedia {
+  padding-block: 20px;
+  border-top: dashed 1px global.$baseColor2;
+  display: grid;
+  grid-template-columns:
+    auto 1fr;
+  column-gap: 20px;
+
+
+  &:last-of-type {
+    border-bottom: dashed 1px global.$baseColor2;
+  }
+
+  &__body {
+    order: 1;
+    display: grid;
+    grid-template-columns:
+      auto 1fr;
+    grid-template-rows:
+      auto
+      auto;
+    column-gap: 5px;
+    align-content: start;
+  }
+
+  &__heading {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-weight: bold;
+  }
+
+  &__date {
+    align-self: center;
+  }
+
+  &__tag {
+    place-self: center start;
+  }
+
+  &__image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+
+
+  @include global.mq('md-min') {
+    padding-block: 40px;
+    grid-template-columns:
+      318fr 736fr;
+    column-gap: 30px;
+
+    &__body {
+      column-gap: 30px;
+    }
+
+    &__heading {
+      @include global.rem-fz(20);
+    }
+
+    &__text {
+      grid-column: 1 / -1;
+      margin-top: 10px;
+    }
+
+    &__linkWrapper {
+      grid-column: 1 / -1;
+      justify-self: end;
+      width: 317px;
+      margin-top: 20px;
+    }
+
+    &__image {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+// ポスト・イントロダクション
+
+
+// 変数、ミックスイン、関数
+@use "../../global/" as g;
+
+
+
+.postIntro {
+  margin-top: 30px;
+  margin-inline: auto;
+  width: 800px;
+  max-width: 100%;
+
+  &__image {
+    width: 100%;
+  }
+
+  &__text {
+    margin-block-start: 30px;
+    text-align: justify;
+  }
+
+
+  @media (width >= 768px) {
+    margin-top: 40px;
+
+    &__text {
+      margin-top: 40px;
+    }
+  }
+}

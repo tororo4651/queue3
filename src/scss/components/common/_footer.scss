@@ -1,0 +1,157 @@
+// 共通・フッター
+
+
+
+// 変数、ミックスイン、関数
+@use "../../global/" as g;
+
+
+
+.footer {
+  position: relative;
+  margin-top: 80px;
+  padding: 50px 20px;
+  background-color: g.$mainColor;
+  color: g.$whiteColor;
+  text-align: center;
+
+  &__btn {
+    position: absolute;
+    top: -45px;
+    right: 10px;
+  }
+
+  &__logo {
+    width: 76.5px;
+    height: 103.8px;
+  }
+
+  &__nav {
+    margin-top: 34px;
+
+    &List {
+      @include g.rem-fz(14);
+      font-weight: bold;
+    }
+
+    &Item {
+      border-top: dashed 1px;
+
+      &:last-child {
+        border-bottom: dashed 1px;
+      }
+    }
+
+    &Link {
+      display: block;
+      padding: 10px;
+      color: g.$whiteColor;
+      text-decoration-line: none;
+
+      @include g.hover {
+        color: g.$baseColor2;
+      }
+    }
+  }
+
+  // &__linkList {
+  //   margin-top: 40px;
+  //   display: flex;
+  //   justify-content: center;
+  //   font-size: g.rem(12);
+  //   line-height: 1;
+  // }
+
+  // &__linkItem {
+
+  //   &:not(:first-child) {
+  //     border-left: solid 1px;
+  //     margin-inline-start: 7px;
+  //     padding-inline-start: 7px;
+  //   }
+  // }
+
+  &__links {
+    margin-top: 45px;
+    font-size: g.rem(12);
+    line-height: 1;
+
+    display: grid;
+    grid-template-columns:
+      repeat(3, auto);
+    column-gap: 7px;
+    justify-content: center;
+
+    &::after {
+      content: "";
+      width: 1px;
+      height: 100%;
+      background-color: g.$whiteColor;
+    }
+  }
+
+  &__link {
+    color: g.$whiteColor;
+    text-decoration-line: none;
+
+    &:last-child {
+      order: 1;
+    }
+
+    @include g.hover {
+      color: g.$baseColor2;
+    }
+  }
+
+  &__copyright {
+    margin-top: 60px;
+    @include g.rem-fz(12);
+  }
+
+
+  @include g.mq() {
+    margin-top: 100px;
+
+    .staff & {
+      margin-top: 150px;
+    }
+
+    &__btn {
+      top: -60px;
+      right: 30px;
+    }
+
+    &__nav {
+      margin-top: 25px;
+
+      &List {
+        font-size: g.rem(12);
+        font-weight: normal;
+        line-height: 1;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: center;
+      }
+
+      &Item {
+        border: none;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &:not(:first-child) {
+          border-left: solid 1px;
+        }
+      }
+
+      &Link {
+        padding: 0 10px;
+      }
+    }
+
+    &__links {
+      margin-top: 15px;
+    }
+  }
+}

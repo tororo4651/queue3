@@ -1,0 +1,60 @@
+// メニュー・プライマリ
+
+
+
+// 変数、ミックスイン、関数
+@use "../../../global/" as g;
+
+
+
+.primaryMenu {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(159px, 1fr));
+  gap: 1px;
+
+  &__link {
+    display: block;
+    padding: 10px;
+    background-color: g.$baseColor1;
+    @include g.rem-fz(14);
+    line-height: 1.2;
+    text-decoration-line: none;
+    text-align: center;
+
+    &.--current {
+      background-color: g.$baseColor2;
+      color: g.$whiteColor;
+      font-weight: bold;
+    }
+  }
+
+  + * {
+    margin-top: 40px;
+  }
+
+
+  @include g.mq('md-min') {
+    grid-template-columns:
+      repeat(6, 1fr);
+    gap: 3px;
+    border-bottom: solid 5px g.$baseColor2;
+
+    + * {
+      margin-top: 50px;
+    }
+
+    &__item {
+      display: grid;
+    }
+
+    &__link {
+      // height: 100%;
+      padding: 20px 5px 15px;
+      border-radius: 6px 6px 0 0;
+      @include g.rem-fz(16);
+      display: grid;
+      align-items: center;
+    }
+  }
+}

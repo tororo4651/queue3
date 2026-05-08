@@ -1,0 +1,49 @@
+// Utilityクラス・ユーティリティクラス・汎用クラス・ヘルパークラス
+
+
+
+// 変数、ミックスイン、関数
+@use "../global/" as g;
+
+
+
+/* パソコンのみ
+.u-pc-only {
+  display: none;
+
+  @include g.mq {
+    display: block;
+  }
+}
+
+
+
+
+/* マージン */
+
+/* トップ */
+@for $i from 0 through 20 {
+  .u-mt#{$i * 5} {
+    margin-top: $i * 5px !important;
+  }
+}
+
+
+
+
+// 行揃え
+
+// 左揃え
+.u-ta-l {
+  text-align: left !important;
+}
+
+// 中横揃え
+.u-ta-c {
+  text-align: center !important;
+}
+
+// 右揃え
+.u-ta-r {
+  text-align: right !important;
+}

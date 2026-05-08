@@ -1,0 +1,30 @@
+// セクション・プライマリ
+
+
+// 変数、ミックスイン、関数
+@use "../../../global" as g;
+
+
+
+.primarySection {
+
+  & + * {
+    margin-block-start: 80px;
+  }
+
+  &__list {
+    margin-top: 20px;
+  }
+
+
+  @include g.mq(md-min) {
+
+    & + * {
+      margin-block-start: 100px;
+    }
+
+    &__list {
+      margin-top: 40px;
+    }
+  }
+}

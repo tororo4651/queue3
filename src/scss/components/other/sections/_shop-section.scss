@@ -1,0 +1,52 @@
+// セクション・ショップ
+
+
+// 変数、ミックスイン、関数
+@use "../../../global";
+
+
+
+.shopsSection {
+  margin-inline: calc(50% - 50vw);
+  padding-inline: calc(50vw - 50%);
+  padding-block: 80px;
+  background-color: global.$baseColor1;
+
+  &__heading {
+    @include global.rem-fz(24);
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__lead {
+    margin-top: 30px;
+  }
+
+  &__list {
+    margin-block-start: 50px;
+    margin-inline: auto;
+    max-width: 400px;
+    display: grid;
+    row-gap: 30px;
+  }
+
+
+  @include global.mq('md-min') {
+    padding-block: 100px;
+
+    &__heading {
+      @include global.rem-fz(30);
+    }
+
+    &__lead {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    &__list {
+      margin-block-start: 80px;
+      max-width: none;
+      row-gap: 40px;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<%
+  if (typeof className === 'undefined') {
+    className = '';
+  }
+%>
+
+
+<footer class="footer <%- className %>">
+
+  <a class="footer__btn pageTopBtn" href="#top">
+    <img class="pageTopBtn__image" src="<%- path %>images/common/btn_pagetop.svg" alt="ページの先頭に戻る" width="80" height="80" loading="lazy">
+  </a>
+
+  <img class="footer__logo" src="<%= path %>images/common/logo_small_wh.svg" alt="-nekonokomono-　l'atelier Queue" width="76.5" height="103.8" loading="lazy">
+
+  <nav class="footer__nav" aria-label="メインメニュー">
+    <ul class="footer__navList">
+      <li class="footer__navItem">
+        <a class="footer__navLink" href="/">トップページ</a>
+      </li>
+
+      <li class="footer__navItem">
+        <a class="footer__navLink" href="/products/">商品一覧</a>
+      </li>
+
+      <li class="footer__navItem">
+        <a class="footer__navLink" href="/blog/">ねこブログ</a>
+      </li>
+
+      <li class="footer__navItem">
+        <a class="footer__navLink" href="/staff/">ねこ店員紹介</a>
+      </li>
+
+      <li class="footer__navItem">
+        <a class="footer__navLink" href="/faq/">よくあるご質問</a>
+      </li>
+
+      <li class="footer__navItem">
+        <a class="footer__navLink" href="/contact/">お問い合わせ</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="footer__links">
+    <a class="footer__link" href="/law/">特定商取引法に関する表記</a>
+
+    <a class="footer__link" href="/privacy/">プライバシーポリシー</a>
+  </div><!-- /.footer__links -->
+
+  <p class="footer__copyright">
+    <small class="footer__copyrightText" lang="en">&copy; l’atelier Queue All Rights Reserved. 2021</small>
+  </p>
+
+</footer>

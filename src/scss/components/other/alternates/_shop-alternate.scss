@@ -1,0 +1,65 @@
+// 配置の切り替え・ショップ
+
+
+// 変数、ミックスイン、関数
+@use "../../../global/" as g;
+
+
+
+.shopAlternate {
+  display: grid;
+  row-gap: 20px;
+
+  &__body {
+    order: 1;
+  }
+
+  &__heading {
+    padding: 10px;
+    background-color: g.$mainColor;
+    color: g.$whiteColor;
+    font-weight: bold;
+  }
+
+  &__address {
+    margin-top: 20px;
+
+    &List {
+      @include g.rem-fz(14);
+      display: grid;
+      grid-template-columns:
+        auto 1fr;
+      gap: 10px 1em;
+    }
+
+    &Term {
+      font-weight: bold;
+    }
+
+    &Link {
+      overflow-wrap: anywhere;
+      // or
+      // word-break: break-all;
+      text-underline-position: under;
+    }
+  }
+
+
+  @include g.mq() {
+    grid-template-columns:
+      calc(440 / 1084 * 100%) calc(624 / 1084 * 100%);
+    justify-content: space-between;
+
+    &__heading {
+      padding: 8px 20px;
+      font-size: g.rem(20);
+    }
+
+    &__address {
+
+      &List {
+        font-size: g.rem(16);
+      }
+    }
+  }
+}

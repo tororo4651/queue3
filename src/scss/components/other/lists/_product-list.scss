@@ -1,0 +1,31 @@
+// リスト・商品
+
+
+// 変数、ミックスイン、関数
+@use "../../../global" as g;
+
+
+
+.productList {
+  @media not (min-width: 576px) {
+    width: min(100%, 400px);
+    margin-inline: auto;
+    display: grid;
+    gap: 20px;
+  }
+
+
+  @include g.mq('sm-min') {
+    width: auto;
+    display: grid;
+    grid-template-columns:
+      repeat(2, 1fr);
+    gap: 40px 20px;
+  }
+
+
+  @include g.mq(md-min) {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+}

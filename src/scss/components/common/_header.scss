@@ -1,0 +1,66 @@
+// 共通・ヘッダー
+
+
+
+// 変数、ミックスイン、関数
+@use "../../global/" as g;
+
+
+
+.header {
+
+  &__figure {
+    height: 110px;
+    background-image: url(../images/common/bg_top_header.jpg);
+    background-position: center;
+    background-size: cover;
+    display: grid;
+
+    &::before {
+      content: "";
+      grid-area: 1 / 1;
+      background-color: rgb(255 255 255 / 0.5);
+    }
+  }
+
+  &__link {
+    grid-area: 1 / 1;
+    place-self: center;
+  }
+
+  &__logo {
+    width: 200px;
+    height: 70px;
+  }
+
+
+  @include g.mq {
+
+    &__figure {
+      position: relative;
+      height: 200px;
+      padding: 30px;
+      background-position: center;
+      background-size: auto 100%;
+      background-repeat: repeat-x;
+
+
+      &::before {
+        grid-area: auto / auto;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__link {
+      place-self: center start;
+      z-index: 1;
+    }
+
+    &__logo {
+      width: 400px;
+      height: 140px;
+    }
+  }
+}

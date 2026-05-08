@@ -1,0 +1,39 @@
+// ポスト・ヘッダー
+
+
+// 変数、ミックスイン、関数
+@use "../../global/" as g;
+
+
+
+.postHeader {
+  margin-top: 80px;
+  margin-inline: auto;
+  max-width: 800px;
+  display: grid;
+
+  &__heading {
+    order: 1;
+    border-bottom: dashed 1px;
+    @include g.rem-fz(26);
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  &__info {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: center;
+    column-gap: 30px;
+  }
+
+
+  @include g.mq('md-min') {
+    margin-top: 100px;
+
+    &__heading {
+      font-size: g.rem(36);
+    }
+  }
+}

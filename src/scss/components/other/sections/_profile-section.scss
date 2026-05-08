@@ -1,0 +1,62 @@
+// セクション・プロフィール
+
+
+// 変数、ミックスイン、関数
+@use "../../../global/" as g;
+
+
+
+.profileSection {
+  padding-block: 80px;
+  text-align: center;
+
+  &__heading {
+    @include g.rem-fz(24);
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  &__figure {
+    margin-block-start: 30px;
+  }
+
+  &__image {
+    width: 140px;
+    height: 140px;
+  }
+
+  &__account {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+  &__text {
+    margin-top: 20px;
+  }
+
+  &__sns {
+    margin-top: 40px;
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 40px;
+    justify-content: center;
+
+    &Image {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+
+  @include g.mq() {
+    padding-block: 100px;
+
+    &__heading {
+      @include g.rem-fz(30);
+    }
+
+    &__figure {
+      margin-block-start: 40px;
+    }
+  }
+}

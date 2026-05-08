@@ -1,0 +1,187 @@
+// 配置が切り替わる・STAFF
+
+
+// 変数、ミックスイン、関数
+@use "@scss/global/" as g;
+
+
+
+// Flexbox
+// .staffAlternate {
+//   display: flex;
+//   flex-direction: column;
+
+//   & + & {
+//     margin-block-start: 50px;
+//   }
+
+//   &__body {
+//     order: 1;
+//     margin-inline: calc(50% - 50vw) 0;
+//     padding-inline: calc(50vw - 50%) 20px;
+//     padding-block: 30px 50px;
+//     background-color: g.$baseColor1;
+
+//     .staffAlternate.--reverse & {
+//       margin-inline: 0 calc(50% - 50vw);
+//       padding-inline: 20px calc(50vw - 50%);
+//     }
+//   }
+
+//   &__heading {
+//     border-bottom: dashed 1px;
+//     padding-bottom: 5px;
+//     @include g.rem-fz(22);
+//     font-weight: bold;
+//   }
+
+//   &__text {
+//     margin-top: 20px;
+//   }
+
+//   &__figure {
+//     margin-inline: calc(50% - 50vw);
+//   }
+
+
+//   @include g.mq() {
+//     flex-direction: row;
+//     justify-content: space-between;
+//     align-items: center;
+//     margin-block-start: 50px;
+//     background-color: g.$baseColor1;
+
+//     & + & {
+//       margin-block-start: 160px;
+//     }
+
+//     &__body {
+//       // flex-shrink: 0;
+//       order: 0;
+//       width: 50%;
+//       margin-inline: 0;
+//       padding: 40px;
+
+//       .staffAlternate.--reverse & {
+//         order: 1;
+//         margin-inline: 0;
+//         padding: 40px;
+//       }
+//     }
+
+//     &__figure {
+//       width: 50vw;
+//       // flex-grow: 1;
+//       margin-inline: 0 calc(50% - 50vw);
+//       translate: 0 -50px;
+
+//       .staffAlternate.--reverse & {
+//         margin-inline: calc(50% - 50vw) 0;
+//       }
+//     }
+//   }
+
+
+//   @include g.mq('lg-min') {
+
+//     &__heading {
+//       padding-bottom: 10px;
+//       font-size: g.rem(30);
+//     }
+
+//     &__text {
+//       margin-top: 40px;
+//       @include g.rem-fz(20);
+//       line-height: 2;
+//     }
+//   }
+// }
+
+
+
+
+// CSS Grid
+.staffAlternate {
+  display: grid;
+
+  & + & {
+    margin-block-start: 50px;
+  }
+
+  &__body {
+    order: 1;
+    margin-inline: calc(50% - 50vw) 0;
+    padding-inline: calc(50vw - 50%) 20px;
+    padding-block: 30px 50px;
+    background-color: g.$baseColor1;
+
+    .staffAlternate.--reverse & {
+      margin-inline: 0 calc(50% - 50vw);
+      padding-inline: 20px calc(50vw - 50%);
+    }
+  }
+
+  &__heading {
+    border-bottom: dashed 1px;
+    padding-bottom: 5px;
+    @include g.rem-fz(22);
+    font-weight: bold;
+  }
+
+  &__text {
+    margin-top: 20px;
+  }
+
+  &__figure {
+    margin-inline: calc(50% - 50vw);
+  }
+
+
+  @include g.mq() {
+    grid-template-columns:
+      50% 50%;
+    align-items: center;
+    margin-block-start: 50px;
+    background-color: g.$baseColor1;
+
+    & + & {
+      margin-block-start: 160px;
+    }
+
+    &__body {
+      order: 0;
+      margin-inline: 0;
+      padding: 40px;
+
+      .staffAlternate.--reverse & {
+        order: 1;
+        margin-inline: 0;
+        padding: 40px;
+      }
+    }
+
+    &__figure {
+      margin-inline: 0 calc(100% - 50vw);
+      translate: 0 -50px;
+
+      .staffAlternate.--reverse & {
+        margin-inline: calc(100% - 50vw) 0;
+      }
+    }
+  }
+
+
+  @include g.mq('lg-min') {
+
+    &__heading {
+      padding-bottom: 10px;
+      font-size: g.rem(30);
+    }
+
+    &__text {
+      margin-top: 40px;
+      @include g.rem-fz(20);
+      line-height: 2;
+    }
+  }
+}

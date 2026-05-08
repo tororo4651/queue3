@@ -1,0 +1,71 @@
+// Division・商品
+
+
+// 変数、ミックスイン、関数
+@use "../../../global" as g;
+
+
+
+.productDivision {
+  margin-block-start: 80px;
+  display: grid;
+  row-gap: 30px;
+
+  &__info {
+    order: 1;
+    border: solid 1px g.$baseColor2;
+    padding: 20px;
+
+    &Title {
+      font-weight: bold;
+    }
+
+    &Text {
+      margin-top: 1.75em;
+    }
+
+    &List {
+      margin-top: 1.75em;
+    }
+  }
+
+  &__thumbnails {
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns:
+      repeat(5, 1fr);
+  }
+
+  &__thumbnail {
+
+    &Image {
+      border: solid 5px transparent;
+      transition: all .3s;
+
+      &.is-current {
+        border-color: g.$baseColor3;
+      }
+
+      @include g.hover-focus {
+        opacity: 0.7;
+      }
+    }
+  }
+
+
+  @include g.mq('md-min') {
+    margin-block-start: 100px;
+    grid-template-columns:
+      repeat(2, 1fr);
+    gap: 15px 20px;
+
+    &__viewer {
+      grid-row: 1 / 3;
+    }
+
+    &__thumbnails {
+      margin-top: 12px;
+      column-gap: 10px;
+    }
+  }
+}

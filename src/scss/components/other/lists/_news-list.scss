@@ -1,0 +1,49 @@
+// リスト・お知らせ
+
+
+// 変数、ミックスイン、関数
+@use "../../../global/" as g;
+
+
+
+.newsList {
+  border-bottom: dashed 1px g.$baseColor2;
+  line-height: 1.5;
+
+  &__date {
+    border-top: dashed 1px g.$baseColor2;
+    padding-top: 15px;
+  }
+
+  &__text {
+    padding-bottom: 15px;
+  }
+
+  &__link {
+    display: inline-block;
+    text-underline-position: under;
+  }
+
+
+  @include g.mq {
+    display: grid;
+    grid-template-columns:
+      110px 1fr;
+
+    &__date {
+      padding-block: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    &__text {
+      border-top: dashed 1px g.$baseColor2;
+      padding-block: 20px;
+      display: grid;
+      grid-template-columns:
+        auto 1fr;
+      column-gap: 15px;
+      align-items: center;
+    }
+  }
+}

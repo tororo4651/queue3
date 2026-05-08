@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<%- include('../components/common/_head.ejs', { pageTitle: 'ねこ店員紹介', description: "ハンドメイド猫グッズのお店 l'atelier Queue のねこ店員紹介ページです。" }) %>
+
+
+<body class="staff">
+
+<%- include('../components/common/_header', { path1: '../', path2: '../../' }) %>
+
+
+<ol class="breadcrumb l-lg-container">
+  <li class="breadcrumb__item">
+    <a class="breadcrumb__link" href="/">ホーム</a>
+  </li>
+
+  <li class="breadcrumb__item">ねこ店員紹介</li>
+</ol>
+
+
+<main>
+
+  <div class="l-lg-container">
+
+    <div class="pageHeader">
+      <h1 class="pageHeader__heading lv1Heading --center">
+        <span class="lv1Heading__ja">ねこ店員紹介</span>
+
+        <span class="lv1Heading__en" lang="en">Cat Staff</span>
+      </h1>
+
+      <p class="pageHeader__lead">
+        当店の優秀な（？）ねこ店員さんたちを紹介します。<br>
+        店員さんの日々の活動はねこブログにて不定期に報告しております。よろしければそちらもご覧ください♪
+      </p>
+    </div><!-- /.pageHeader -->
+
+
+    <section class="staffAlternate --reverse">
+      <div class="staffAlternate__body">
+        <h2 class="staffAlternate__heading">あんずセンパイ</h2>
+
+        <p class="staffAlternate__text">
+          ふわふわ系女子。<br>
+          控えめに見えて実は要求が通るまで一歩も惹かない強情な性格。後輩に指導を試みてよく返り討ちに遭っている。
+        </p>
+      </div><!-- /.staffAlternate__body -->
+
+      <figure class="staffAlternate__figure">
+        <img class="staffAlternate__image" src="../../images/staff/img_staff_anzu.jpg" alt="" width="1600" height="1000" loading="lazy">
+      </figure>
+    </section>
+
+
+    <section class="staffAlternate">
+      <div class="staffAlternate__body">
+        <h2 class="staffAlternate__heading">ちゃまめコウハイ</h2>
+
+        <p class="staffAlternate__text">
+          前職不明の中途採用。<br>
+          自己主張強めだけど意外と人見知り。<br>
+          あんずのものはオレのもの。オレのものはオレのもの。
+        </p>
+      </div><!-- /.staffAlternate__body -->
+
+      <figure class="staffAlternate__figure">
+        <img class="staffAlternate__image" src="../../images/staff/img_staff_chamame.jpg" alt="" width="1600" height="1000" loading="lazy">
+      </figure>
+    </section>
+
+  </div><!-- /.l-lg-container -->
+
+</main>
+
+
+<%- include('../components/common/_footer', { path: '../../' }) %>
+
+
+</body>
+</html>

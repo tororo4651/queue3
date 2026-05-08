@@ -1,0 +1,98 @@
+// 共通・ページネーション1
+
+
+
+// 変数、ミックスイン、関数
+@use "../../global/" as g;
+
+
+
+.pagination1 {
+  margin-block-start: 50px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+
+  &__link {
+    min-width: min(40 / 375 * 100vw, 40px);
+    min-height: min(40 / 375 * 100vw, 40px);
+    padding-inline: 0.5em;
+    border-radius: 6px;
+    background-color: g.$baseColor1;
+    color: g.$textColor;
+    font-size: min(14 / 375 * 100vw, 14px);
+    font-weight: bold;
+    text-decoration-line: none;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    place-items: center;
+
+    &.--current {
+      background-color: g.$baseColor2;
+      color: g.$whiteColor;
+    }
+
+    &.--prev {
+      min-width: min(60 / 375 * 100vw, 60px);
+      padding-inline: 0.8em;
+
+      &::before {
+        content: "";
+        width: min(8 / 375 * 100vw, 8px);
+        height: min(8 / 375 * 100vw, 8px);
+        border-left: solid 2px;
+        border-bottom: solid 2px;
+        rotate: 45deg;
+      }
+    }
+
+    &.--next {
+      min-width: min(60 / 375 * 100vw, 60px);
+      padding-inline: 0.8em;
+
+      &::after {
+        content: "";
+        width: min(8 / 375 * 100vw, 8px);
+        height: min(8 / 375 * 100vw, 8px);
+        border-top: solid 2px;
+        border-right: solid 2px;
+        rotate: 45deg;
+      }
+    }
+  }
+
+  &__item {
+
+    &.--dots {
+      font-size: min(14 / 375 * 100vw, 14px);
+    }
+  }
+
+
+  @include g.mq() {
+    margin-block-start: 80px;
+    column-gap: 10px;
+
+    &__link {
+      min-width: 50px;
+      height: 50px;
+      font-size: g.rem(18);
+
+      &.--prev,
+      &.--next {
+        padding-inline: 1.5em;
+      }
+    }
+
+    &__item {
+
+      &.--dots {
+        @include g.rem-fz(18);
+      }
+    }
+  }
+
+}

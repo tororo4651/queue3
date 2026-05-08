@@ -1,0 +1,35 @@
+// 共通・ページヘッダー
+
+
+
+// 変数、ミックスイン、関数
+@use "../../global/" as g;
+
+
+
+.pageHeader {
+  margin-block-start: 50px;
+
+  & + * {
+    margin-block-start: 40px;
+  }
+
+  &__lead {
+    margin-block-start: 40px;
+    @include g.rem-fz(16);
+  }
+
+
+  @media (width >= 768px) {
+    margin-block-start: 70px;
+
+    & + * {
+      margin-block-start: 80px;
+    }
+
+    &__lead {
+      margin-block-start: 60px;
+      text-align: center;
+    }
+  }
+}

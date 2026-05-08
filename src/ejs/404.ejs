@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<%- include('components/common/_head', { pageTitle: 'ページが見つかりません', description: 'ページが見つかりません' }) %>
+
+
+<body class="notFound">
+
+<%- include('./components/common/_header', { path1: './', path2: '../' }) %>
+
+
+
+<ol class="breadcrumb l-lg-container">
+  <li class="breadcrumb__item">
+    <a class="breadcrumb__link" href="/">ホーム</a>
+  </li>
+
+  <li class="breadcrumb__item">ページが見つかりません</li>
+</ol>
+
+
+
+<main>
+
+  <div class="l-md-container">
+
+    <div class="pageHeader">
+      <h1 class="pageHeader__heading lv1Heading --center">
+        <span class="lv1Heading__ja">ページが見つかりません</span>
+
+        <span class="lv1Heading__en" lang="en">404 Not Found</span>
+      </h1>
+    </div>
+
+    <div class="pageContent">
+      <p class="pageContent__text">お探しのページが見つかりません。<br>
+一時的にアクセスできない状態にあるか、移動もしくは削除された可能性があります。</p>
+
+      <p class="pageContent__text">お手数ですがURLをご確認の上、トップページ・上記メニューなどからお探しください。</p>
+    </div><!-- /.pageContent -->
+
+    <a class="primaryBtn --leftArrow --pc-center" href="./">
+      トップページへ戻る
+    </a>
+
+  </div><!-- /.l-md-container -->
+
+</main>
+
+
+<%- include('components/common/_footer', { path: '../' }) %>
+
+
+</body>
+</html>

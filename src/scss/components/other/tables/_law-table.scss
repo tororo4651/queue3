@@ -1,0 +1,38 @@
+// 表・特定商取引法に関する表記
+
+
+
+// 変数、ミックスイン、関数
+@use "../../../global" as g;
+
+
+
+.lawTable {
+
+  &__row {
+    border: solid 1px g.$baseColor2;
+  }
+
+  &__header,
+  &__data {
+    padding: 10px 15px;
+    vertical-align: middle;
+    @include g.rem-fz(12);
+  }
+
+  &__header {
+    width: 30%;
+    background-color: g.$baseColor1;
+  }
+
+
+  @media screen and not (max-width: 575px) {
+
+    &__header,
+    &__data {
+      padding: 20px;
+      @include g.rem-fz(16);
+    }
+  }
+
+}

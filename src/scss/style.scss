@@ -1,0 +1,138 @@
+// @charset "UTF-8";
+
+// Sass は、CSS にコンパイルされる際、"2バイト文字（全角文字）" が含まれていると、自動的に "@charset "UTF-8";" が "最初の行" に出力される。 そのため、Sassファイルに @charset を書く必要はありません。 Sassファイルに 2バイト文字が一切ない場合、@charset は "出力されません" 。 また、BOM に関しては 2バイト文字の有無に関わらず BOM "なし" になる。 アウトプットスタイルを、CSS を圧縮する「compressed」にすると、@charset は "削除されてコンパイルされる" 。しかし、そのままだと文字化けの可能性があるため、BOM "あり" の CSSファイルが生成される。 BOM によってエンコードを判別させることで対策している。 このように Sass では文字化け対策されているので、普段文字コードを意識する必要はほとんどありません。
+
+
+
+
+/* CSSカスタムプロパティ・CSS変数・カスケード変数 */
+@use "./settings/_variables.scss";
+
+
+
+
+/* ベース */
+@use "bases/bases";
+
+
+
+
+/* レイアウト */
+
+@use "./layouts/_layouts.scss";
+
+/* CSSグリッド */
+@use "./layouts/_grids.scss";
+
+
+
+
+/* コンポーネント・パーツ */
+
+/* 見出し */
+@use "components/parts/_headings.scss";
+
+/* ボタン */
+@use "./components/parts/buttons";
+
+/* リンク */
+@use "./components/parts/links";
+
+/* タグ */
+@use "./components/parts/tags";
+
+
+
+
+/* コンポーネント・共通 */
+
+/* ヘッダー */
+@use "components/common/_header.scss";
+/* ヘッダー・トップページ */
+@use "./components/common/top-header";
+
+/* グローバルナビゲーション */
+@use "./components/common/_gnav";
+
+/* パンくずリスト */
+@use "./components/common/breadcrumb";
+
+/* ページネーション1 */
+@use "./components/common/_pagination1";
+/* ページネーション2 */
+@use "./components/common/pagination2";
+
+/* フッター */
+@use "components/common/_footer";
+
+/* ページ・ヘッダー */
+@use "./components/common/_page-header";
+/* ページ・コンテンツ */
+@use "./components/common/_page-content";
+
+/* ポスト・ヘッダー */
+@use "components/common/_post-header";
+/* ポスト・イントロダクション */
+@use "./components/common/post-intro";
+/* ポスト・ボディ */
+@use "components/common/post-body.scss";
+
+
+
+
+/* コンポーネント・その他 */
+
+/* セクション・プライマリ */
+@use "components/other/sections/primary-section";
+/* セクション・ショップ */
+@use "components/other/sections/shop-section.scss";
+/* セクション・プロフィール */
+@use "components/other/sections/profile-section";
+
+/* リスト・お知らせ */
+@use "components/other/lists/news-list";
+/* リスト・商品 */
+@use "components/other/lists/product-list";
+/* リスト・FAQ */
+@use "./components/other/lists/_faq-list.scss";
+
+/* メニュー・プライマリ */
+@use "./components/other/menus/primary-menu";
+
+/* メディア・ブログ */
+@use "components/other/media/_blog-media.scss";
+/* メディア・商品 */
+@use "components/other/media/product-media";
+
+/* カード・商品 */
+@use "components/other/cards/product-card";
+
+/* Division・商品 */
+@use "./components/other/divisions/_product-division";
+
+/* 表・特定商取引法に関する表記 */
+@use "./components/other/tables/law-table";
+
+/* 配置の切り替え・STAFF */
+@use "components/other/alternates/staff-alternate";
+/* 配置の切り替え・ショップ */
+@use "components/other/alternates/shop-alternate";
+
+/* カート */
+@use "components/other/carts/product-cart";
+
+/* FAQ */
+@use "./components/other/faq/faq";
+
+/* フォーム */
+@use "./components/other/forms/contact-form.scss";
+
+
+
+
+/* Utilityクラス・ユーティリティクラス・汎用クラス・ヘルパークラス */
+@use "./utilities/_utilities.scss";
+
+
+
+@debug 'あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ';

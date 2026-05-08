@@ -1,0 +1,126 @@
+// パーツ・見出し
+
+
+
+// 変数、ミックスイン、関数
+@use "../../global/" as g;
+
+
+
+/* Level1 */
+.lv1Heading {
+  font-weight: bold;
+  text-align: center;
+  display: grid;
+
+  &.--center {
+    justify-items: center;
+  }
+
+  &__ja {
+    margin-top: 15px;
+    @include g.rem-fz(30);
+    letter-spacing: .2em;
+  }
+
+  &__en {
+    margin-top: 10px;
+    color: g.$baseColor2;
+    font-size: g.rem(15);
+    text-transform: uppercase;
+    letter-spacing: .2em;
+  }
+
+  &::before {
+    content: "";
+    width: 40px;
+    height: 32px;
+    background-image: url(../images/common/ico_paw02.svg);
+    background-size: cover;
+  }
+
+
+  @include g.mq('md-min') {
+
+    &__ja {
+      font-size: g.rem(40);
+    }
+
+    &__en {
+      @include g.rem-fz(20);
+    }
+
+    &::before {
+      width: 60px;
+      height: 48px;
+    }
+  }
+}
+
+
+
+
+/* Level2 */
+.lv2Heading {
+  @include g.rem-fz(24);
+  display: grid;
+  grid-template-columns:
+    auto 1fr;
+  align-items: center;
+
+  &--icon {
+    column-gap: 10px;
+
+    &::before {
+      content: "";
+      width: 20px;
+      aspect-ratio: 20 / 44.25;
+      background-image: url(../images/common/ico_cat.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+
+  &__title {
+    grid-area: 1 / 2;
+    padding-block-end: 5px;
+    border-bottom: solid 2px g.$baseColor2;
+    @include g.rem-fz(24);
+    font-weight: bold;
+
+    :has(> .lv2Heading__link) > & {
+      padding-inline-end: 90px;
+    }
+
+    // .lv2Heading--link > & {
+    //   padding-inline-end: 90px;
+    // }
+  }
+
+  &__link {
+    grid-area: 1 / 2;
+    justify-self: end;
+  }
+
+
+  @include g.mq {
+
+    &--icon {
+      column-gap: 20px;
+
+      &::before {
+        width: 30px;
+      }
+    }
+
+    &__title {
+      @include g.rem-fz(30);
+
+      :has(> .lv2Heading__link) > & {
+        padding-inline-end: 110px;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,108 @@
+// FAQ
+
+
+// 変数、ミックスイン、関数
+@use "../../../global" as g;
+
+
+
+.faq {
+  margin-inline: calc(50% - 50vw);
+
+  &__item {
+
+    &:not(:first-of-type) {
+      margin-block-start: 20px;
+    }
+  }
+
+  &__question {
+    padding: 15px 20px;
+    background-color: g.$baseColor1;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns:
+      auto 1fr auto;
+    column-gap: 15px;
+    align-items: center;
+
+    &Icon {
+      color: g.$baseColor2;
+      @include g.rem-fz(30);
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    &Text {
+      font-weight: bold;
+    }
+
+    &Action {
+      position: relative;
+      width: 20px;
+      height: 20px;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-block: auto;
+        width: 100%;
+        height: 1px;
+        background-color: #707070;
+      }
+
+      &::after {
+        rotate: 90deg;
+        transition: rotate .3s;
+
+        [open] & {
+          rotate: 0deg;
+        }
+      }
+    }
+  }
+
+  &__answer {
+    // display: grid;
+    // grid-template-rows:
+    //   0fr;
+    // transition: grid-template-rows 1s;
+    // max-height: 0;
+    // overflow: hidden;
+    // transition: max-height .3s;
+    transition: all 1s;
+
+    // .is-open + & {
+      // grid-template-rows:
+      //   1fr;
+    // }
+
+    &Inner {
+      overflow-y: hidden;
+      display: grid;
+      grid-template-columns:
+        auto 1fr;
+      column-gap: 15px;
+    }
+
+    &Icon {
+      align-self: start;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 20px;
+      @include g.rem-fz(30);
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    &Text {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-right: 20px;
+    }
+  }
+
+}

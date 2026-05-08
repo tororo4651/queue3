@@ -1,0 +1,34 @@
+// メディア・商品
+
+
+// 変数、ミックスイン、関数
+@use "../../../global/" as g;
+
+
+
+.productMedia {
+
+  &__link {
+    border: solid 1px #ddd;
+    text-decoration-line: none;
+    display: grid;
+    grid-template-columns:
+      min(120 / 375 * 100vw, 120px) auto;
+    column-gap: 20px;
+    align-items: center;
+    transition: all .3s;
+
+    @include g.hover-focus {
+      border-color: g.$baseColor2;
+      background-color: g.$baseColor1;
+      color: g.$textColor;
+    }
+  }
+
+  &__heading {
+    order: 1;
+    padding: 10px 10px 10px 0;
+    font-size: min(16 / 375 * 100vw, 18px);
+    font-weight: normal;
+  }
+}

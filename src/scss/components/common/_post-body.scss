@@ -1,0 +1,215 @@
+// ポスト・ボディ
+
+
+// 変数、ミックスイン、関数
+@use "../../global" as g;
+
+
+
+.postBody {
+  margin-top: 80px;
+  max-width: 800px;
+  margin-inline: auto;
+
+  + * {
+    margin-top: 80px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  > *:not(h1, h2, h3, h4, h5, h6) {
+    margin-block-start: 1.75em;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  h2 {
+    margin-top: 80px;
+    padding-bottom: 5px;
+    border-bottom: solid 2px g.$baseColor2;
+    @include g.rem-fz(24);
+
+    + * {
+      margin-top: 25px;
+    }
+  }
+
+  h3 {
+    margin-top: 40px;
+    border-left: solid 4px g.$baseColor2;
+    padding-inline-start: 20px;
+    @include g.rem-fz(20);
+
+    + * {
+      margin-top: 20px;
+    }
+  }
+
+  h4 {
+    margin-top: 30px;
+    color: g.$baseColor3;
+    @include g.rem-fz(18);
+
+    + * {
+      margin-top: 15px;
+    }
+  }
+
+  h5 {
+    margin-top: 30px;
+    @include g.rem-fz(16);
+
+    & + * {
+      margin-top: 10px;
+    }
+  }
+
+  h6 {
+    margin-top: 30px;
+    color: #666;
+    @include g.rem-fz(16);
+
+    & + * {
+      margin-top: 10px;
+    }
+  }
+
+  p {
+    @include g.rem-fz(16);
+    line-height: 1.75;
+    text-align: justify;
+    text-justify: inter-ideograph;
+  }
+
+  ul,
+  ol {
+    list-style-position: inside;
+
+    li {
+      display: grid;
+      grid-auto-flow: column;
+      column-gap: 7px;
+
+      + li {
+        margin-block-start: 1.5em;
+      }
+    }
+  }
+
+  ul {
+
+    li {
+
+      &::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        margin-top: 12px;
+        background-color: g.$baseColor2;
+      }
+    }
+  }
+
+  ol {
+
+    li {
+      counter-increment: count 1;
+
+      &::before {
+        content: counter(count, decimal) ".";
+      }
+    }
+  }
+
+  table {
+    margin-top: 1.5em;
+    width: 100%;
+
+    th,
+    td {
+      border: solid 1px g.$baseColor2;
+      padding: 20px;
+      vertical-align: middle;
+    }
+
+    th {
+      background-color: g.$baseColor1;
+    }
+  }
+
+  img {
+    display: block;
+    margin-inline: auto;
+  }
+
+
+  @include g.mq {
+    margin-top: 100px;
+
+    + * {
+      margin-top: 100px;
+    }
+
+    h2 {
+      margin-top: 100px;
+      @include g.rem-fz(30);
+
+      + * {
+        margin-top: 40px;
+      }
+    }
+
+    h3 {
+      margin-top: 50px;
+      @include g.rem-fz(24);
+
+      + * {
+        margin-top: 30px;
+      }
+    }
+
+    h4 {
+      margin-top: 40px;
+      @include g.rem-fz(20);
+
+      + * {
+        margin-top: 20px;
+      }
+    }
+
+    h5 {
+      @include g.rem-fz(18);
+
+      + * {
+        margin-top: 15px;
+      }
+    }
+
+    img.left {
+      float: left;
+      max-width: 380px;
+      margin-inline-end: 20px;
+      margin-block-end: 10px;
+    }
+
+    img.right {
+      float: right;
+      width: 380px;
+      margin-inline-start: 10px;
+      margin-block-end: 10px;
+    }
+  }
+
+}

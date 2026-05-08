@@ -1,0 +1,31 @@
+// パーツ・タグ
+
+
+// 変数、ミックスイン、関数
+@use "../../global/index";
+
+
+
+// プライマリ
+.primaryTag {
+  display: inline-block;
+  min-width: 92px;
+  padding: 4px 10px;
+  background-color: index.$baseColor1;
+  color: index.$textColor;
+  @include index.rem-fz(12);
+  line-height: 1;
+  text-align: center;
+
+  &.--new {
+    background-color: index.$accentColor;
+    color: index.$whiteColor;
+    font-weight: bold;
+  }
+
+  &.--require {
+    min-width: 0;
+    background-color: index.$accentColor;
+    color: index.$whiteColor;
+  }
+}

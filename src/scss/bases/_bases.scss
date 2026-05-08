@@ -1,0 +1,56 @@
+// ベース
+
+
+
+// リセットCSS・リセットスタイルシート
+@use "reset";
+
+
+
+
+// 変数、ミックスイン、関数
+@use "../global" as g;
+
+
+
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  color: g.$textColor;
+  // @include g.ff;
+  font-family: g.$baseFont;
+  line-height: 1.75;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5;
+}
+
+a {
+  color: g.$mainColor;
+  text-decoration-line: underline;
+  transition: color 0.3s;
+
+  @include g.hover {
+    color: g.$baseColor3;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  appearance: none;
+  display: block;
+  width: 100%;
+  border: 0;
+  font-family: inherit;
+  font-weight: inherit;
+}

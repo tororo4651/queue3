@@ -1,0 +1,29 @@
+// パーツ・リンク
+
+
+// 変数、ミックスイン、関数
+@use "../../global/" as g;
+
+
+
+// プライマリ
+.primaryLink {
+  display: inline-block;
+  padding-inline: 1.5em;
+  border-radius: 6px;
+  background-color: g.$mainColor;
+  color: g.$whiteColor;
+  font-size: g.rem(13);
+  text-decoration-line: none;
+  transition: all .3s;
+
+  @include g.hover-focus {
+    background-color: g.$baseColor2;
+    color: g.$whiteColor;
+  }
+
+
+  @include g.mq {
+    @include g.rem-fz(16);
+  }
+}
