@@ -88,6 +88,8 @@
 @use "components/other/sections/shop-section.scss";
 /* セクション・プロフィール */
 @use "components/other/sections/profile-section";
+/* セクション・送信完了 */
+@use "./components/other/sections/sent-section";
 
 /* リスト・お知らせ */
 @use "components/other/lists/news-list";
@@ -132,7 +134,3 @@
 
 /* Utilityクラス・ユーティリティクラス・汎用クラス・ヘルパークラス */
 @use "./utilities/_utilities.scss";
-
-
-
-@debug 'あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ';

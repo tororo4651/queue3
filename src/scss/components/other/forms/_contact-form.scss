@@ -5,6 +5,7 @@
 @use "../../../global" as g;
 
 
+
 .contactForm {
   border-top: dashed 1px g.$baseColor2;
 
@@ -45,24 +46,46 @@
     }
   }
 
-  &__select {
+  &__select,
+  &__textarea,
+  &__input {
     appearance: none;
+    width: 100%;
+    padding: 10px 20px;
     border: solid 1px g.$grayColor1;
     border-radius: 4px;
-    padding: 10px 20px;
-    width: 100%;
     background-color: g.$whiteColor;
     font-family: inherit;
     outline: none;
 
     &:focus {
-      box-shadow: 0 0 5px rgba(168, 142, 37, 0.7);
+      box-shadow: 0 0 5px rgba(168,142,37,0.7);
     }
 
     .is-error & {
       color: g.$accentColor;
       border-color: g.$accentColor;
     }
+  }
+
+  &__textarea {
+    margin-top: 20px;
+  }
+
+  &__input {
+    margin-block-start: 20px;
+  }
+
+  &__note {
+    margin-top: 10px;
+    color: g.$grayColor1;
+    @include g.rem-fz(12);
+  }
+
+  &__btnWrapper {
+    margin-block-start: 80px;
+    display: grid;
+    gap: 20px;
   }
 
   &__error {
@@ -81,11 +104,22 @@
       background-image: url(../images/common/ico_attention.svg);
       background-repeat: no-repeat;
       background-position: center;
+      background-size: contain;
       vertical-align: middle;
     }
 
     .is-error & {
       display: block;
+    }
+  }
+
+
+  @include g.mq() {
+
+    &__btnWrapper {
+      grid-template-columns:
+        minmax(auto, 400px) minmax(auto, 400px);
+      justify-content: center;
     }
   }
 }

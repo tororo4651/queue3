@@ -1,0 +1,39 @@
+// セクション・送信完了
+
+
+// 変数、ミックスイン、関数
+@use "../../../global" as g;
+
+
+.sentSection {
+  margin-inline: calc(50% - 50vw);
+  padding-inline: calc(50vw - 50%);
+  padding-block: 60px;
+  background-color: g.$baseColor1;
+
+  &__heading {
+    @include g.rem-fz(24);
+    text-align: center;
+
+    + * {
+      margin-block-start: 40px;
+    }
+  }
+
+  &__text {
+
+    & + & {
+      margin-top: 1.75em;
+    }
+  }
+
+  + * {
+    margin-top: 80px;
+  }
+
+
+  @include g.mq() {
+    margin-inline: 0;
+    padding: 60px 40px;
+  }
+}

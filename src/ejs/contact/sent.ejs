@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<%- include('../components/common/_head', { pageTitle: '送信完了', description: 'ハンドメイド猫グッズのお店 l\'atelier Queue の送信完了ページです。' }) %>
+
+
+<body class="contact">
+
+<%- include('../components/common/_header', { path1: '../', path2: '../../' }) %>
+
+
+<ol class="breadcrumb l-lg-container">
+  <li class="breadcrumb__item">
+    <a class="breadcrumb__link" href="/">ホーム</a>
+  </li>
+
+  <li class="breadcrumb__item">お問い合わせ</li>
+</ol>
+
+
+<main>
+
+  <div class="l-md-container">
+
+    <div class="pageHeader">
+      <h1 class="pageHeader__heading lv1Heading --center">
+        <span class="lv1Heading__ja">送信完了</span>
+
+        <span class="lv1Heading__en" lang="en">Contact</span>
+      </h1>
+    </div><!-- /.pageHeader -->
+
+
+    <section class="sentSection">
+      <h2 class="sentSection__heading">お問い合わせありがとうございました。</h2>
+
+      <p class="sentSection__text">
+        お問い合わせ内容を確認させていただき、近日中に返信させていただきます。<br>
+        数日経っても返信が無い場合は、大変お手数ですが改めてご連絡いただけますよう、お願い申し上げます。
+      </p>
+
+      <p class="sentSection__text">なお、お問い合わせ内容によっては返信をいたしかねる場合もございますのでご了承下さい。</p>
+    </section>
+
+
+    <a class="primaryBtn --leftArrow" href="../">トップページへ戻る</a>
+
+  </div><!-- /.l-md-container -->
+
+</main>
+
+
+<%- include('../components/common/_footer', { path: '../../' }) %>
+
+
+
+
+</body>
+</html>

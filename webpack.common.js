@@ -161,6 +161,20 @@ module.exports = {
       // minify: false,
     }),
     new HtmlWebpackPlugin({
+      template: './src/ejs/contact/confirm.ejs',
+      filename: 'contact/confirm.html',
+      chunks: ['app'],
+      inject: 'head',
+      // minify: false,
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/ejs/contact/sent.ejs',
+      filename: 'contact/sent.html',
+      chunks: ['app'],
+      inject: 'head',
+      // minify: false,
+    }),
+    new HtmlWebpackPlugin({
       template: './src/ejs/404.ejs',
       filename: '404.html',
       chunks: ['app'],

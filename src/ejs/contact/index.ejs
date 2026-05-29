@@ -56,21 +56,21 @@
       </div><!-- /.contactForm__item -->
 
 
-      <div class="contactForm__item">
+      <div class="contactForm__item is-error">
         <label class="contactForm__label" for="contactMessage">お問い合わせ内容</label>
 
-        <span class="contactForm__tag tag --require">必須</span>
+        <span class="contactForm__tag primaryTag --require">必須</span>
 
-        <textarea id="contactMessage" name="contactMessage" cols="30" rows="10" placeholder="お問い合わせ内容をご記入ください。" required></textarea>
+        <textarea class="contactForm__textarea" id="contactMessage" name="contactMessage" cols="30" rows="10" placeholder="お問い合わせ内容をご記入ください。" required></textarea>
 
         <p class="contactForm__error" role="alert" aria-live="polite" aria-hidden="true">お問い合わせ内容を入力してください。</p>
       </div><!-- /.contactForm__item -->
 
 
-      <div class="contactForm__item">
+      <div class="contactForm__item is-error">
         <label class="contactForm__label" for="contactName">お名前</label>
 
-        <span class="contactForm__tag tag --require">必須</span>
+        <span class="contactForm__tag primaryTag --require">必須</span>
 
         <input class="contactForm__input" id="contactName" type="text" name="contactName" placeholder="猫野三毛蔵" required aria-describedby="contactNameNote">
 
@@ -80,10 +80,10 @@
       </div><!-- /.contactForm__item -->
 
 
-      <div class="contactForm__item">
-        <label class="contactForm__label" for="contactEmail"></label>
+      <div class="contactForm__item is-error">
+        <label class="contactForm__label" for="contactEmail">メールアドレス</label>
 
-        <span class="contactForm__tag tag --require">必須</span>
+        <span class="contactForm__tag primaryTag --require">必須</span>
 
         <input class="contactForm__input" id="contactEmail" type="email" name="contactEmail" placeholder="mikezou@sample.co.jp" required>
 
@@ -91,13 +91,18 @@
       </div><!-- /.contactForm__item -->
 
 
-      <button class="contactForm__btn primaryBtn --bgc --rightArrow --pc-center" type="button">入力内容を確認する</button>
+      <div class="contactForm__btnWrapper">
+        <button class="contactForm__btn primaryBtn --bgc --rightArrow --pc-center" type="button">入力内容を確認する</button>
+      </div><!-- /.contactForm__btnWrapper -->
 
     </form>
 
   </div><!-- /.l-lg-container -->
 
 </main>
+
+
+<%- include('../components/common/_footer', { path: '../../' }) %>
 
 
 
