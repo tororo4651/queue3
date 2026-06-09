@@ -1,0 +1,68 @@
+@charset "utf-8";
+// ============================================================
+// mixin
+// ============================================================
+
+//=================================
+// font-size
+//=================================
+
+@mixin fz($size){
+	font-size: ($size*10) + px;
+	font-size: $size + rem;
+}
+
+@mixin fz_em($size,$context){
+	font-size: ($size / $context) + em;
+}
+
+//=================================
+// vw size
+//=================================
+@function vw($size, $design:375){
+  $rate: 100 / $design;
+  @return $rate * $size * 1vw;
+}
+
+
+
+
+//=================================
+// media query
+//=================================
+
+@mixin x-small {
+	@media screen and not (min-width: 576px) {
+		@content;
+	}
+}
+
+@mixin small {
+	@media (min-width: 576px) {
+		@content;
+	}
+}
+
+@mixin medium {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin large {
+	@media (min-width: 992px) {
+		@content;
+	}
+}
+
+@mixin x-large {
+	@media (min-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin xx-large {
+	@media (min-width: 1400px) {
+		@content;
+	}
+}

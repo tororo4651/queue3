@@ -1,0 +1,75 @@
+/* 商品カード
+------------------------------------------------------ */
+
+
+.pd-card {
+  position: relative;
+  padding: 20px 15px;
+  border: 1px solid var(--c_gray1);
+  overflow: hidden;
+  display: grid;
+
+  .pd-card-list & {
+    grid-row: span 5;
+    grid-template-rows:
+      subgrid;
+    gap: 0;
+  }
+}
+
+.pd-card__thumb {
+  order: -1;
+  overflow: hidden;
+
+  > img {
+    aspect-ratio: 318 / 190;
+    object-fit: cover;
+  }
+}
+
+.pd-card__title {
+  margin-top: 30px;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed;
+  font-size: 18px;
+  font-weight: bold;
+  display: grid;
+  align-content: end;
+}
+
+.pd-card__text {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.pd-card__price {
+  margin-top: auto;
+  font-weight: bold;
+  text-align: right;
+
+  > span {
+    font-size: 12px;
+    font-weight: normal;
+  }
+}
+
+.pd-card__btn {
+  margin-top: 10px;
+}
+
+.pd-card__ribbon {
+  position: absolute;
+  left: -30px;
+  top: 15px;
+  width: 120px;
+  padding: 5px;
+  background: var(--c_red1);
+  color: var(--c_white);
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  transform: rotate(-45deg);
+}

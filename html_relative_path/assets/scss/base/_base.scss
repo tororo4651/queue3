@@ -1,0 +1,44 @@
+/*----------------------------------------
+	base
+----------------------------------------*/
+
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: var(--c_text);
+  font-family: var(--font_sans);
+  line-height: 1.75;
+}
+h1,h2,h3,h4,h5,h6 {
+  line-height: 1.5;
+}
+
+a {
+  color: var(--c_link);
+  text-decoration: underline;
+  transition: all 0.3s;
+}
+a:hover {
+  color: var(--c_hover);
+}
+img {
+  width: 100%;
+  height: auto;
+  &.self-size {
+    max-width: 100%;
+  }
+}
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
