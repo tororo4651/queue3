@@ -1,4 +1,4 @@
-/* 共通 */
+// 共通
 
 
 
@@ -60,7 +60,7 @@ pdThumbnailImages.forEach((pdThumbnailImage) => {
 // const faqQuestions = document.querySelectorAll('.faqList__question');
 
 
-// 他の Answer を閉じない
+/* 他の Answer を閉じない */
 
 // faqQuestions.forEach((faqQuestion, index, array) => {
 //   faqQuestion.addEventListener('click', function(e) {
@@ -83,7 +83,7 @@ pdThumbnailImages.forEach((pdThumbnailImage) => {
 
 
 
-// 他の Answer を閉じる
+/* 他の Answer を閉じる */
 
 const faqQuestions = document.querySelectorAll('.faqList__question');
 const faqAnswers = document.querySelectorAll('.faqList__answer');
@@ -146,6 +146,7 @@ const faqAnswers = document.querySelectorAll('.faqList__answer');
 
 
 
+// 練習
 
 // const test = document.querySelector('.test');
 // test.style.color = 'plum';
@@ -156,27 +157,24 @@ const faqAnswers = document.querySelectorAll('.faqList__answer');
 
 // ES Modules
 
-// 変数
-// export const text1 = 'おはよう。';
+// 変数（ text1 ）
+// const text1 = 'おはよう。';
+
 
 // 関数（あいさつ）
-// export const greet = (name) => {
+// const greet = (name) => {
 //   console.log(`こんにちは。
 // ${name}さん。`);
 // };
 
 
 // normal export
-
 // export { text1, greet };
 
 
-
 // default export
-
-// const text2 = 'こんにちは。';
-
-// export default text2;
+// export default text1;
+// export default greet;
 
 
 
@@ -186,8 +184,10 @@ const faqAnswers = document.querySelectorAll('.faqList__answer');
 // import $ from 'jquery';
 
 // $('.test').css({
+//   marginBlockStart: '80px',
+//   // 不可 80
+//   'margin-inline-start': '100px',
 //   color: 'blue',
-//   fontSize: 30,
-//   'margin-top': '50px',
-//   paddingLeft: 30
+//   backgroundColor: 'gold',
+//   'font-size': '50px',
 // });

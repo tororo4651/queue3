@@ -5,12 +5,18 @@ import '../scss/style.scss';
 
 
 
-// 共通
+/* 共通 */
 
 import './modules/common.js';
 
 
 
+
+
+
+
+
+// 練習
 
 // const test = document.querySelector('.test');
 // test.style.color = 'plum';
@@ -21,19 +27,17 @@ import './modules/common.js';
 
 // ES Modules
 
-// import { text1, greet } from './modules/common.js';
-
-// const test = document.querySelector('.test');
-// test.textContent = text1;
-
-// greet('鈴木');
+// normal import
+// import { text1, greet } from './modules/common';
 
 
+// default import
+// import text1 from './modules/common.js';
+// import greet from './modules/common.js';
 
-// import text2 from './modules/common.js';
 
-// const test = document.querySelector('.test');
-// test.innerText = text2;
+// console.log(text1);
+// greet('佐藤');
 
 
 
@@ -43,9 +47,10 @@ import './modules/common.js';
 // import $ from 'jquery';
 
 // $('.test').css({
+//   marginBlockStart: '80px',
+//   // 不可 80
+//   'margin-inline-start': '100px',
 //   color: 'blue',
 //   backgroundColor: 'gold',
-//   'font-size': 50,
-//   'margin-block-start': 80,
-//   marginInlineStart: '100px'
+//   'font-size': '50px',
 // });
